@@ -1,0 +1,13 @@
+Cypress.Commands.add('fillMandatoryFieldsAndSubmit', function(){
+    cy.get('#firstName')
+        .type('Isabella')
+        .should('have.value', 'Isabella')
+    cy.get('#lastName')
+        .type('Vieira')
+        .should('have.value', 'Vieira')
+    cy.get('#email')
+        .type('bellacandy5900g@gmail.com')
+        .should('have.value', 'bellacandy5900g@gmail.com')
+    cy.get('#open-text-area').type('Teste, Teste')
+    cy.get('button[type="submit"]').click()
+})
